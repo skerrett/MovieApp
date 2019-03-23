@@ -8,5 +8,8 @@ import retrofit2.http.GET;
 public interface MovieActorsApi {
 
     @GET("all")
-    Call<List<Post>> getAll();
+    Call<List<Movie>> getAll();
+
+    @GET("")
+    Call<List<Movie>> getGenre();
 }

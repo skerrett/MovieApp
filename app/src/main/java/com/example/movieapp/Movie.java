@@ -1,6 +1,6 @@
 package com.example.movieapp;
 
-public class Post {
+public class Movie {
 
     private String name;
 

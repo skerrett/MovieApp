@@ -15,6 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private TextView textViewResult;
 
+    private  MovieActorsApi movieActorsApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,27 +29,27 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        MovieActorsApi movieActorsApi = retrofit.create(MovieActorsApi.class);
+        movieActorsApi = retrofit.create(MovieActorsApi.class);
 
-        Call<List<Post>> call = movieActorsApi.getAll();
+        Call<List<Movie>> call = movieActorsApi.getAll();
 
-        call.enqueue(new Callback<List<Post>>() {
+        call.enqueue(new Callback<List<Movie>>() {
             @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
 
                 if(!response.isSuccessful()){
             textViewResult.setText("Code: " + response.code());
             return;
                 }
-                List<Post> posts = response.body();
+                List<Movie> movies = response.body();
 
-                for (Post post : posts){
+                for (Movie movie : movies){
                     String content ="";
-                    content +="NAME: " + post.getName() + "\n";
-                    content +="ReleaseYear: " + post.getReleaseYear() + "\n";
-                    content +="GENRE: " + post.getGenre() + "\n";
-                    content +="STARS: " + post.getStars() + "\n";
-                    content +="RUNTIME: " + post.getRuntime() + "\n\n";
+                    content +="NAME: " + movie.getName() + "\n";
+                    content +="ReleaseYear: " + movie.getReleaseYear() + "\n";
+                    content +="GENRE: " + movie.getGenre() + "\n";
+                    content +="STARS: " + movie.getStars() + "\n";
+                    content +="RUNTIME: " + movie.getRuntime() + "\n\n";
 
                     textViewResult.append(content);
 
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
+            public void onFailure(Call<List<Movie>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
         });
