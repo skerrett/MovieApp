@@ -15,12 +15,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener{
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
     private Button button;
     private Button button2;
-
+    public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         button2 = findViewById(R.id.button_id2);
-        button.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDialog();
@@ -125,11 +125,26 @@ public class MainActivity extends AppCompatActivity {
                 textViewResult.setText(t.getMessage());
             }
         });
+
+    }
+
+    @Override
+    public void sendGenre(String Genre) {
+        String text = Genre.toString();
+
+        Intent intent = new Intent(this, Activity3.class);
+        intent.putExtra(EXTRA_TEXT,text);
+        startActivity(intent);
     }
 
     public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
+    }
+
+    public void openDialog() {
+        Dialog dialog = new Dialog();
+        dialog.show(getSupportFragmentManager(), "dialog");
     }
 
 

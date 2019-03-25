@@ -14,5 +14,7 @@ public interface MovieActorsApi {
     @GET("genre/{genre}")
     Call<List<Movie>> getGenre(@Path("genre")String genre);
 
+    
+
 
 }
