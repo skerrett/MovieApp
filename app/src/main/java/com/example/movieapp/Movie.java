@@ -12,6 +12,18 @@ public class Movie {
 
     private int runtime;
 
+    private String coverUrl;
+
+    private String trailerUrl;
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public String getTrailerUrl() {
+        return trailerUrl;
+    }
+
     public String getName() {
         return name;
     }
