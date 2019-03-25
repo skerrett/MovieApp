@@ -15,12 +15,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Dialog.DialogListener{
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener{
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
     private Button button;
     private Button button2;
+    private Button button3;
+
+
     public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,14 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             @Override
             public void onClick(View v) {
                 openDialog();
+            }
+        });
+
+        button3 = findViewById(R.id.button_id3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog2();
             }
         });
 
@@ -137,6 +150,15 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
+    @Override
+    public void sendName(String Name) {
+        String text = Name.toString();
+
+        Intent intent = new Intent(this, Activity4.class);
+        intent.putExtra(EXTRA_TEXT,text);
+        startActivity(intent);
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
@@ -145,6 +167,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     public void openDialog() {
         Dialog dialog = new Dialog();
         dialog.show(getSupportFragmentManager(), "dialog");
+    }
+
+    public void openDialog2() {
+        Dialog2 dialog = new Dialog2();
+        dialog.show(getSupportFragmentManager(), "dialog2");
     }
 
 
