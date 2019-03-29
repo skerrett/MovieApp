@@ -23,7 +23,8 @@ public class Activity5 extends AppCompatActivity {
         setContentView(R.layout.activity_2);
 
         Intent intent = getIntent();
-        int text = intent.getIntExtra(MainActivity.EXTRA_NUMBER,0);
+        String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
+       int year =  Integer.parseInt(text);
 
         textViewResult = findViewById(R.id.text_view_result);
 
@@ -34,7 +35,7 @@ public class Activity5 extends AppCompatActivity {
 
         movieActorsApi = retrofit.create(MovieActorsApi.class);
 
-        getYear(text);
+        getYear(year);
     }
 
     private void getYear(int text) {

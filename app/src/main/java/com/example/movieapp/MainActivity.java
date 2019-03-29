@@ -84,11 +84,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
-    public void sendReleaseYear(int ReleaseYear){
-        int year =  ReleaseYear;
+    public void sendReleaseYear(String ReleaseYear){
+        String year =  ReleaseYear.toString();
 
         Intent intent = new Intent(this, Activity5.class);
-        intent.putExtra(EXTRA_NUMBER,year);
+        intent.putExtra(EXTRA_TEXT,year);
         startActivity(intent);
     }
 

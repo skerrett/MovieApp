@@ -33,8 +33,8 @@ public class Dialog3 extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String name = editTextYear.getText().toString();
-                        int finalValue = Integer.parseInt(name);
-                        listener.sendReleaseYear(finalValue);
+                        //int finalValue = Integer.parseInt(name);
+                        listener.sendReleaseYear(name);
                     }
                 });
         editTextYear = view.findViewById(R.id.ReleaseYear);
@@ -53,7 +53,7 @@ public class Dialog3 extends AppCompatDialogFragment {
     }
 
     public interface DialogListener{
-        void sendReleaseYear(int name);
+        void sendReleaseYear(String ReleaseYear);
     }
 }
 
