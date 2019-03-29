@@ -16,8 +16,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener{
-    private TextView textViewResult;
-    private MovieActorsApi movieActorsApi;
     private Button showAllButton;
     private Button showByGenreButton;
     private Button showByNameButton;
@@ -65,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        textViewResult = findViewById(R.id.text_view_result);
 
     }
 
