@@ -34,10 +34,10 @@ public class Activity5 extends AppCompatActivity {
 
         movieActorsApi = retrofit.create(MovieActorsApi.class);
 
-        getName(text);
+        getYear(text);
     }
 
-    private void getName(int text) {
+    private void getYear(int text) {
         Call<List<Movie>> call = movieActorsApi.getYear(text);
 
         call.enqueue(new Callback<List<Movie>>() {
