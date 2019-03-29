@@ -20,7 +20,7 @@ public class Activity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_4);
+        setContentView(R.layout.activity_2);
 
         Intent intent = getIntent();
         String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
