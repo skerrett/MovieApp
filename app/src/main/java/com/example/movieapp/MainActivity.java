@@ -67,15 +67,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
 
         textViewResult = findViewById(R.id.text_view_result);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://moviesactorsapi20190322124235.azurewebsites.net/api/movies/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        movieActorsApi = retrofit.create(MovieActorsApi.class);
-
-        //getMovies();
-        //getGenre();
     }
 
     @Override
@@ -96,11 +87,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
-    public void sendReleaseYear(int name){
-        int text = name;
+    public void sendReleaseYear(int ReleaseYear){
+        int year =  ReleaseYear;
 
         Intent intent = new Intent(this, Activity5.class);
-        intent.putExtra(EXTRA_NUMBER,text);
+        intent.putExtra(EXTRA_NUMBER,year);
         startActivity(intent);
     }
 
