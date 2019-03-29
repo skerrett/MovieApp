@@ -16,6 +16,9 @@
             android:name=".Activity3"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".Activity5"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".Activity2"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
