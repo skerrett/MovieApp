@@ -18,10 +18,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener{
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
-    private Button button;
-    private Button button2;
-    private Button button3;
-    private Button button4;
+    private Button showAllButton;
+    private Button showByGenreButton;
+    private Button showByNameButton;
+    private Button showByReleaseYearButton;
 
 
     public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.show_all_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        showAllButton = findViewById(R.id.show_all_button);
+        showAllButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
@@ -41,24 +41,24 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        button2 = findViewById(R.id.search_by_genre_button);
-        button2.setOnClickListener(new View.OnClickListener() {
+        showByGenreButton = findViewById(R.id.search_by_genre_button);
+        showByGenreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDialog();
             }
         });
 
-        button3 = findViewById(R.id.search_by_name_button);
-        button3.setOnClickListener(new View.OnClickListener() {
+        showByNameButton = findViewById(R.id.search_by_name_button);
+        showByNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDialog2();
             }
         });
 
-        button4 = findViewById(R.id.get_by_releaseyear);
-        button4.setOnClickListener(new View.OnClickListener() {
+        showByReleaseYearButton = findViewById(R.id.get_by_releaseyear);
+        showByReleaseYearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDialog3();
