@@ -15,12 +15,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener,Dialog4.DialogListener{
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener,Dialog4.DialogListener,Dialog5.DialogListener{
     private Button showAllButton;
     private Button showByGenreButton;
     private Button showByNameButton;
     private Button showByReleaseYearButton;
     private Button showByStarsButton;
+    private Button showByLengthLess;
+    private Button showByLengthMore;
 
 
     public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
@@ -71,6 +73,21 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
                 openDialog4();
             }
         });
+        showByStarsButton = findViewById(R.id.get_by_stars);
+        showByStarsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog4();
+            }
+        });
+
+        showByLengthLess = findViewById(R.id.get_by_lengthLess);
+        showByLengthLess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog5();
+            }
+        });
 
     }
 
@@ -105,6 +122,12 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
+    public void sendLength(int Length){
+        Intent intent = new Intent(this, Activity7.class);
+        intent.putExtra(EXTRA_NUMBER,Length);
+        startActivity(intent);
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
@@ -128,6 +151,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     public void openDialog4() {
         Dialog4 dialog = new Dialog4();
         dialog.show(getSupportFragmentManager(), "dialog4");
+    }
+
+    public void openDialog5() {
+        Dialog5 dialog = new Dialog5();
+        dialog.show(getSupportFragmentManager(), "dialog5");
     }
 
 }

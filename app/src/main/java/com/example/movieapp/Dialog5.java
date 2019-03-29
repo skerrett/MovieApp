@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-public class Dialog4 extends AppCompatDialogFragment {
+public class Dialog5 extends AppCompatDialogFragment {
 
-    private EditText editTextStars;
+    private EditText editTextLength;
     private DialogListener listener;
 
     @Override
@@ -22,7 +22,7 @@ public class Dialog4 extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.layout_dialog3, null);
 
         builder.setView(view)
-                .setTitle("Stars")
+                .setTitle("Length Less Than")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -32,12 +32,12 @@ public class Dialog4 extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String name = editTextStars.getText().toString();
+                        String name = editTextLength.getText().toString();
                         int finalValue = Integer.parseInt(name);
-                        listener.sendStars(finalValue);
+                        listener.sendLength(finalValue);
                     }
                 });
-        editTextStars = view.findViewById(R.id.ReleaseYear);
+        editTextLength = view.findViewById(R.id.ReleaseYear);
         return builder.create();
     }
 
@@ -53,7 +53,7 @@ public class Dialog4 extends AppCompatDialogFragment {
     }
 
     public interface DialogListener{
-        void sendStars(int stars);
+        void sendLength(int Length);
     }
 }
 
