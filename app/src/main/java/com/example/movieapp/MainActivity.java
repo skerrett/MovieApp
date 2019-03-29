@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
 
             }
         });
+
         button2 = findViewById(R.id.button_id2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override

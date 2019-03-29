@@ -17,5 +17,8 @@ public interface MovieActorsApi {
     @GET("name/{name}")
     Call<List<Movie>> getName(@Path("name") String name);
 
+    @GET("year_released/{release_year}")
+    Call<List<Movie>> getYear(@Path("release_Year")int release);
+
 
 }
