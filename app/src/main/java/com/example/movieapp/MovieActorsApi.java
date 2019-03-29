@@ -20,5 +20,14 @@ public interface MovieActorsApi {
     @GET("year_released/{release_year}")
     Call<List<Movie>> getYear(@Path("release_Year")int release);
 
+    @GET("stars/{stars}")
+    Call<List<Movie>> getStar(@Path("stars")int stars);
+
+    @GET("runtime/less/{runtime}")
+    Call<List<Movie>> getRuntimeLess(@Path("runtime")int runtime);
+
+    @GET("runtime/more/{runtime}")
+    Call<List<Movie>> getRuntimeMore(@Path("runtime")int runtime);
+
 
 }

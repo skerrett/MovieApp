@@ -15,16 +15,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener{
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener{
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
     private Button button;
     private Button button2;
     private Button button3;
+    private Button button4;
 
 
     public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
-
+    public static final String EXTRA_NUMBER = "com.example.movieapp.EXTRA_NUMBER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,14 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
+        button4 = findViewById(R.id.button_id4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog3();
+            }
+        });
+
         textViewResult = findViewById(R.id.text_view_result);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -67,79 +76,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
 
         //getMovies();
         //getGenre();
-    }
-
-    private void getMovies() {
-        Call<List<Movie>> call = movieActorsApi.getAll();
-
-        call.enqueue(new Callback<List<Movie>>() {
-            @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-
-                if (!response.isSuccessful()) {
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-                List<Movie> movies = response.body();
-
-                for (Movie movie : movies) {
-                    String content = "";
-                    content += "NAME: " + movie.getName() + "\n";
-                    content += "ReleaseYear: " + movie.getReleaseYear() + "\n";
-                    content += "GENRE: " + movie.getGenre() + "\n";
-                    content += "STARS: " + movie.getStars() + "\n";
-                    content += "RUNTIME: " + movie.getRuntime() + "\n\n";
-                    content += "CoverUrl: " + movie.getCoverUrl() + "\n\n";
-                    content += "TrailerUrl: " + movie.getTrailerUrl() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        });
-    }
-
-    private void getGenre() {
-        Call<List<Movie>> call = movieActorsApi.getGenre("Action");
-
-        call.enqueue(new Callback<List<Movie>>() {
-            @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-
-                if (!response.isSuccessful()) {
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-
-                List<Movie> movies = response.body();
-
-                for (Movie movie : movies) {
-                    String content = "";
-                    content += "NAME: " + movie.getName() + "\n";
-                    content += "ReleaseYear: " + movie.getReleaseYear() + "\n";
-                    content += "GENRE: " + movie.getGenre() + "\n";
-                    content += "STARS: " + movie.getStars() + "\n";
-                    content += "RUNTIME: " + movie.getRuntime() + "\n";
-                    content += "CoverUrl: " + movie.getCoverUrl() + "\n";
-                    content += "TrailerUrl: " + movie.getTrailerUrl() + "\n";
-
-                    textViewResult.append(content);
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        });
-
     }
 
     @Override
@@ -160,6 +96,14 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
+    public void sendReleaseYear(int name){
+        int text = name;
+
+        Intent intent = new Intent(this, Activity5.class);
+        intent.putExtra(EXTRA_NUMBER,text);
+        startActivity(intent);
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
@@ -173,6 +117,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     public void openDialog2() {
         Dialog2 dialog = new Dialog2();
         dialog.show(getSupportFragmentManager(), "dialog2");
+    }
+
+    public void openDialog3() {
+        Dialog3 dialog = new Dialog3();
+        dialog.show(getSupportFragmentManager(), "dialog3");
     }
 
 
