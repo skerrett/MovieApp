@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        button4 = findViewById(R.id.button_id4);
+        button4 = findViewById(R.id.get_by_releaseyear);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
