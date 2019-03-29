@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class Activity5 extends AppCompatActivity {
+public class Activity6 extends AppCompatActivity {
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
 
@@ -36,11 +36,11 @@ public class Activity5 extends AppCompatActivity {
 
         movieActorsApi = retrofit.create(MovieActorsApi.class);
 
-        getYear(text);
+        getStar(text);
     }
 
-    private void getYear(int text) {
-        Call<List<Movie>> call = movieActorsApi.getYear(text);
+    private void getStar(int text) {
+        Call<List<Movie>> call = movieActorsApi.getStar(text);
 
         call.enqueue(new Callback<List<Movie>>() {
             @Override

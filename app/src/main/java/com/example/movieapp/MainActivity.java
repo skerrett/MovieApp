@@ -15,11 +15,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener{
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener,Dialog4.DialogListener{
     private Button showAllButton;
     private Button showByGenreButton;
     private Button showByNameButton;
     private Button showByReleaseYearButton;
+    private Button showByStarsButton;
 
 
     public static final String EXTRA_TEXT = "com.example.movieapp.EXTRA_TEXT";
@@ -63,6 +64,13 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
+        showByStarsButton = findViewById(R.id.get_by_stars);
+        showByStarsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog4();
+            }
+        });
 
     }
 
@@ -84,11 +92,16 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
-    public void sendReleaseYear(String ReleaseYear){
-        String year =  ReleaseYear.toString();
+    public void sendReleaseYear(int ReleaseYear){
 
         Intent intent = new Intent(this, Activity5.class);
-        intent.putExtra(EXTRA_TEXT,year);
+        intent.putExtra(EXTRA_NUMBER,ReleaseYear);
+        startActivity(intent);
+    }
+
+    public void sendStars(int stars){
+        Intent intent = new Intent(this, Activity6.class);
+        intent.putExtra(EXTRA_NUMBER,stars);
         startActivity(intent);
     }
 
@@ -112,5 +125,9 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         dialog.show(getSupportFragmentManager(), "dialog3");
     }
 
+    public void openDialog4() {
+        Dialog4 dialog = new Dialog4();
+        dialog.show(getSupportFragmentManager(), "dialog4");
+    }
 
 }

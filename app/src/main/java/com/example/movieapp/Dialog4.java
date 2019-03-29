@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-public class Dialog3 extends AppCompatDialogFragment {
+public class Dialog4 extends AppCompatDialogFragment {
 
-    private EditText editTextYear;
+    private EditText editTextStars;
     private DialogListener listener;
 
     @Override
@@ -32,12 +32,12 @@ public class Dialog3 extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String name = editTextYear.getText().toString();
+                        String name = editTextStars.getText().toString();
                         int finalValue = Integer.parseInt(name);
-                        listener.sendReleaseYear(finalValue);
+                        listener.sendStars(finalValue);
                     }
                 });
-        editTextYear = view.findViewById(R.id.ReleaseYear);
+        editTextStars = view.findViewById(R.id.ReleaseYear);
         return builder.create();
     }
 
@@ -53,7 +53,7 @@ public class Dialog3 extends AppCompatDialogFragment {
     }
 
     public interface DialogListener{
-        void sendReleaseYear(int ReleaseYear);
+        void sendStars(int stars);
     }
 }
 
