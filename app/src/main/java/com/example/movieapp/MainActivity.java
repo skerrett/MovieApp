@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.button_id);
+        button = findViewById(R.id.show_all_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        button2 = findViewById(R.id.button_id2);
+        button2 = findViewById(R.id.search_by_genre_button);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        button3 = findViewById(R.id.button_id3);
+        button3 = findViewById(R.id.search_by_name_button);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
