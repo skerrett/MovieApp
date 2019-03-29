@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 public class Dialog3 extends AppCompatDialogFragment {
 
-    private EditText editTextName;
+    private EditText editTextYear;
     private DialogListener listener;
 
     @Override
@@ -32,12 +32,12 @@ public class Dialog3 extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String name = editTextName.getText().toString();
+                        String name = editTextYear.getText().toString();
                         int finalValue = Integer.parseInt(name);
                         listener.sendReleaseYear(finalValue);
                     }
                 });
-        editTextName = view.findViewById(R.id.ReleaseYear);
+        editTextYear = view.findViewById(R.id.ReleaseYear);
         return builder.create();
     }
 
