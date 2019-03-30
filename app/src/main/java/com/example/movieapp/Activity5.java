@@ -1,10 +1,12 @@
 package com.example.movieapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class Activity5 extends AppCompatActivity {
+public class Activity5 extends AppCompatActivity implements  MovieAdapter.onItemClickListener {
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
     private android.support.v7.widget.RecyclerView RecyclerView;
@@ -75,6 +77,7 @@ public class Activity5 extends AppCompatActivity {
                 }
                 movieAdapter = new MovieAdapter(getApplicationContext(),MovieList);
                 RecyclerView.setAdapter(movieAdapter);
+                movieAdapter.setOnItemClickListnerer(Activity5.this);
 
 
             }
@@ -84,4 +87,15 @@ public class Activity5 extends AppCompatActivity {
                 textViewResult.setText(t.getMessage());
             }
         });
-    }}
+    }
+    @Override
+    public void onItemClick(int postion) {
+
+        Movie clickeditem = MovieList.get(postion);
+
+
+
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(clickeditem.getTrailerUrl())));
+        Log.i("Video", "Video Playing....");
+    }
+}

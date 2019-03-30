@@ -1,7 +1,5 @@
 package com.example.movieapp;
-
 import android.content.Context;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,17 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.load.resource.gif.GifResourceEncoder;
 import com.squareup.picasso.Picasso;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
     private Context mContext;
     private ArrayList<Movie> MovieList;
+    private onItemClickListener mListener;
+
+    public interface onItemClickListener{
+        void onItemClick(int postion);
+    }
+
+    public void setOnItemClickListnerer(onItemClickListener listnerer){
+        mListener = listnerer;
+    }
 
     public MovieAdapter(Context context, ArrayList<Movie> movieList){
         this.mContext = context;
@@ -81,6 +84,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             coverUrl = itemView.findViewById(R.id.image_view);
             trailerUrl = itemView.findViewById(R.id.text_view_trailer);
             stars = itemView.findViewById(R.id.text_view_stars);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mListener !=null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                        mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
