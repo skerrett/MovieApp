@@ -16,6 +16,16 @@ public class Movie {
 
     private String trailerUrl;
 
+    public Movie( String name,int releaseYear,String genre,int stars,String coverUrl,int runtime,String trailerUrl){
+        this.name = name;
+        this.releaseYear = releaseYear;
+        this.genre = genre;
+        this.stars= stars;
+        this.runtime = runtime;
+        this.coverUrl = coverUrl;
+        this.trailerUrl = trailerUrl;
+    }
+
     public String getCoverUrl() {
         return coverUrl;
     }

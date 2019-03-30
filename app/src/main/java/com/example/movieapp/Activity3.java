@@ -3,8 +3,11 @@ package com.example.movieapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -16,15 +19,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Activity3 extends AppCompatActivity {
     private TextView textViewResult;
     private MovieActorsApi movieActorsApi;
+    private android.support.v7.widget.RecyclerView RecyclerView;
+    private MovieAdapter movieAdapter;
+    private ArrayList<Movie> MovieList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
+        RecyclerView = findViewById(R.id.recycler_view);
+        RecyclerView.setHasFixedSize(true);
+        RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        MovieList = new ArrayList<>();
+
         Intent intent = getIntent();
         String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
-
-        textViewResult = findViewById(R.id.text_view_result);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://moviesactorsapi20190322124235.azurewebsites.net/api/movies/")
@@ -51,17 +62,18 @@ public class Activity3 extends AppCompatActivity {
                 List<Movie> movies = response.body();
 
                 for (Movie movie : movies) {
-                    String content = "";
-                    content += "NAME: " + movie.getName() + "\n";
-                    content += "ReleaseYear: " + movie.getReleaseYear() + "\n";
-                    content += "GENRE: " + movie.getGenre() + "\n";
-                    content += "STARS: " + movie.getStars() + "\n";
-                    content += "RUNTIME: " + movie.getRuntime() + "\n";
-                    content += "CoverUrl: " + movie.getCoverUrl() + "\n";
-                    content += "TrailerUrl: " + movie.getTrailerUrl() + "\n\n";
+                    String name =  movie.getName();
+                    int releaseYear = movie.getReleaseYear();
+                    String genre = movie.getGenre();
+                    int stars = movie.getStars();
+                    int runtime = movie.getRuntime();
+                    String coverUrl = movie.getCoverUrl();
+                    String trailerUrl =  movie.getTrailerUrl();
 
-                    textViewResult.append(content);
+                    MovieList.add(new Movie(name,releaseYear,genre,stars,coverUrl,runtime,trailerUrl));
                 }
+                movieAdapter = new MovieAdapter(getApplicationContext(),MovieList);
+                RecyclerView.setAdapter(movieAdapter);
 
 
             }

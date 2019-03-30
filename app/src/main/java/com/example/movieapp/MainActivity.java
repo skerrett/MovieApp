@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         showByLengthLess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 openDialog5();
             }
         });
