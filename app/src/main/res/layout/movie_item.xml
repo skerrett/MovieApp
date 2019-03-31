@@ -27,29 +27,95 @@
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/text_view_genre"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genre:" />
+            android:id="@+id/linearLayout">
 
-        <TextView
-            android:id="@+id/text_view_stars"
+
+            <TextView
+                android:id="@+id/genretextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/genre_viewer_text" />
+
+            <TextView
+                android:id="@+id/text_view_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stars:" />
+            android:id="@+id/linearLayout2">
 
-        <TextView
-            android:id="@+id/text_view_runtime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="runtime" />
+            <TextView
+                android:id="@+id/starstextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/stars_viewer_text" />
 
-        <TextView
-            android:id="@+id/text_view_releaseYear"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_view_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Release Year:" />
+            android:id="@+id/linearLayout3">
+
+            <TextView
+                android:id="@+id/runtimetextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/runtime_viewer_text" />
+
+            <TextView
+                android:id="@+id/text_view_runtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4">
+
+
+            <TextView
+                android:id="@+id/releaseyeartextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/release_year_viewer_text" />
+
+            <TextView
+                android:id="@+id/text_view_releaseYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/text_view_trailer"

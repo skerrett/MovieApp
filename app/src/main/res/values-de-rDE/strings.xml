@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="release_year_viewer_text">"Veröffentlicht:  "</string>
+    <string name="runtime_viewer_text">"Laufzeit:  "</string>
+    <string name="stars_viewer_text">"Sterne:  "</string>
+    <string name="genre_viewer_text">"Genre:  "</string>
+    <string name="get_all_length_more">Suche nach Länge(Mehr)</string>
+    <string name="get_all_length_less">Suche nach Länge(Weniger)</string>
+    <string name="get_all_by_release_year">" Suche nach Jahr"</string>
+    <string name="get_all_by_rating">Suche nach Bewertung</string>
+    <string name="get_all_by_name">Suche mit Name</string>
+    <string name="get_all_by_genre">Suche nach Genre</string>
+    <string name="get_all">Alle Filme anzeigen</string>
+</resources>

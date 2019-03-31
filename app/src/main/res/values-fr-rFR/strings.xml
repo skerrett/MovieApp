@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="get_all">Montrer tous films</string>
+    <string name="get_all_by_genre">Recherche par genre</string>
+    <string name="get_all_by_name">Rechercher par nom</string>
+    <string name="get_all_by_rating">Recherche par note</string>
+    <string name="get_all_by_release_year">" Recherche par année"</string>
+    <string name="get_all_length_less">Recherche par longueur( Moins)</string>
+    <string name="get_all_length_more">Recherche par longueur</string>
+    <string name="genre_viewer_text">"Genre:  "</string>
+    <string name="stars_viewer_text">"Étoiles:  "</string>
+    <string name="runtime_viewer_text">"Temps d'exécution:  "</string>
+    <string name="release_year_viewer_text">"Libéré:  "</string>
+</resources>

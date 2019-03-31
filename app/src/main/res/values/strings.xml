@@ -5,6 +5,10 @@
     <string name="get_all_by_name">Search by Name</string>
     <string name="get_all_by_rating">Search by Rating</string>
     <string name="get_all_by_release_year">Search by Year</string>
-    <string name="get_all_length_less">Search by Length(Less than)</string>
-    <string name="get_all_length_more">Search by Length(More than)</string>
+    <string name="get_all_length_less">Search by Length(Less Than)</string>
+    <string name="get_all_length_more">Search by Length(Plus)</string>
+    <string name="genre_viewer_text">Genre:  </string>
+    <string name="stars_viewer_text">Stars:  </string>
+    <string name="runtime_viewer_text">Runtime:  </string>
+    <string name="release_year_viewer_text">Released:  </string>
 </resources>

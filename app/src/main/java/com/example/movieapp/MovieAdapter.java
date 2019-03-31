@@ -55,11 +55,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
 
         holder.name.setText(name);
-        holder.genre.setText("Genre"+genre);
-        holder.trailerUrl.setText("trailerUrl:" + trailerUrl);
-        holder.releaseYear.setText("releaseYear: "+releaseYear);
-        holder.runtime.setText("runtime: "+runtime);
-        holder.stars.setText("stars: "+stars);
+        holder.genre.setText(" "+genre);
+        holder.trailerUrl.setText(trailerUrl);
+        holder.releaseYear.setText(" "+Integer.toString(releaseYear));
+        holder.runtime.setText(" "+Integer.toString(runtime));
+        holder.stars.setText(" "+Integer.toString(stars));
         Picasso.with(mContext).load(coverUrl).fit().centerInside().into(holder.coverUrl);
     }
 
