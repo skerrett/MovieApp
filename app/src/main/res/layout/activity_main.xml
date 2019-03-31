@@ -42,7 +42,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
         android:layout_marginTop="440dp"
-        android:text="@string/get_all_length_more" />
+        android:text="@string/get_all_length_less" />
 
     <Button
         android:id="@+id/get_by_lengthMore"
@@ -51,7 +51,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
         android:layout_marginTop="520dp"
-        android:text="@string/get_all_length_less" />
+        android:text="@string/get_all_length_more" />
 
     <Button
         android:id="@+id/show_all_button"
