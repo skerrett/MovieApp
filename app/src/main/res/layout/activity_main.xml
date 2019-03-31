@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,14 +11,13 @@
     android:padding="8dp"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/search_by_name_button"
         android:layout_width="185dp"
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="160dp"
         android:text="@string/get_all_by_name" />
 
     <Button
@@ -23,7 +26,7 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="240dp"
         android:text="@string/get_all_by_release_year" />
 
     <Button
@@ -32,7 +35,7 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="320dp"
         android:text="@string/get_all_by_rating" />
 
     <Button
@@ -41,7 +44,7 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="400dp"
         android:text="@string/get_all_length_less" />
 
     <Button
@@ -50,7 +53,7 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="480dp"
         android:text="@string/get_all_length_more" />
 
     <Button
@@ -59,7 +62,7 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:text="@string/get_all" />
 
     <Button
@@ -68,7 +71,10 @@
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:text="@string/get_all_by_genre" />
 
+
+
 </RelativeLayout>
+    </ScrollView>

@@ -15,7 +15,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener,Dialog4.DialogListener,Dialog5.DialogListener{
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener,Dialog2.DialogListener,Dialog3.DialogListener,Dialog4.DialogListener,Dialog5.DialogListener,Dialog6.DialogListener{
     private Button showAllButton;
     private Button showByGenreButton;
     private Button showByNameButton;
@@ -90,6 +90,15 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
+        showByLengthMore = findViewById(R.id.get_by_lengthMore);
+        showByLengthMore.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                openDialog6();
+            }
+        });
+
     }
 
     @Override
@@ -129,6 +138,12 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         startActivity(intent);
     }
 
+    public void sendLengthMore(int Length){
+        Intent intent = new Intent(this, Activity8.class);
+        intent.putExtra(EXTRA_NUMBER,Length);
+        startActivity(intent);
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
@@ -157,6 +172,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     public void openDialog5() {
         Dialog5 dialog = new Dialog5();
         dialog.show(getSupportFragmentManager(), "dialog5");
+    }
+
+    public void openDialog6() {
+        Dialog6 dialog = new Dialog6();
+        dialog.show(getSupportFragmentManager(), "dialog6");
     }
 
 }
