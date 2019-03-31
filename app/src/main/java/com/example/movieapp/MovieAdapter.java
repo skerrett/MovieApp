@@ -56,7 +56,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
         holder.name.setText(name);
         holder.genre.setText(" "+genre);
-        holder.trailerUrl.setText(trailerUrl);
         holder.releaseYear.setText(" "+Integer.toString(releaseYear));
         holder.runtime.setText(" "+Integer.toString(runtime));
         holder.stars.setText(" "+Integer.toString(stars));
@@ -73,7 +72,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         public TextView stars;
         public TextView runtime;
         public ImageView coverUrl;
-        public TextView trailerUrl;
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,7 +80,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             genre = itemView.findViewById(R.id.text_view_genre);
             runtime = itemView.findViewById(R.id.text_view_runtime);
             coverUrl = itemView.findViewById(R.id.image_view);
-            trailerUrl = itemView.findViewById(R.id.text_view_trailer);
             stars = itemView.findViewById(R.id.text_view_stars);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

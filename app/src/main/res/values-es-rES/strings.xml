@@ -8,8 +8,8 @@
     <string name="get_all_by_release_year">Búsqueda por año</string>
     <string name="get_all_length_less">" Buscar por longitud(Menos)"</string>
     <string name="get_all_length_more">" Buscar por longitud(Más)"</string>
-    <string name="genre_viewer_text">Género</string>
-    <string name="stars_viewer_text">"Estrellas:  "</string>
-    <string name="runtime_viewer_text">"Tiempo de ejecución:  "</string>
-    <string name="release_year_viewer_text">" Publicado:  "</string>
+    <string name="genre_viewer_text">Género:</string>
+    <string name="stars_viewer_text">"Estrellas:"</string>
+    <string name="runtime_viewer_text">"Tiempo de ejecución:"</string>
+    <string name="release_year_viewer_text">"Publicado:"</string>
 </resources>

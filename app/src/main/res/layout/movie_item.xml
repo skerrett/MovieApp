@@ -117,12 +117,5 @@
         </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/text_view_trailer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="trailerUrl:" />
-
-
     </LinearLayout>
 </android.support.v7.widget.CardView>
